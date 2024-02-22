@@ -19,7 +19,7 @@
         rgba(136, 192, 144, 1) 75%,
         rgba(60, 172, 115, 1) 100%
     );;
-    --main-color:#e6006d;
+    --main-color:rgba(40,111,108);
     --gradient-olive-bg:rgba(40,111,108);
     --font-color:#90979f;
     --hover-box-shadow:rgba(0,0,0,0.19)0px 10px 20px,
@@ -36,6 +36,8 @@ body{
     font-family: 'Poppins', sans-serif;
     background: var(--bg-color);
     overflow-x: hidden;
+    background: url('stock-market.gif') center center fixed; /* Replace 'stock-market.gif' with the path to your GIF file */
+    background-size: cover;
 }
 
 header{
@@ -139,7 +141,7 @@ ul.navlist{
 
 /* ==================== home section css code ============================ */
 section{
-    padding: 90px 8%;
+    padding: 50px 8%;
 }
 
 .home{
@@ -161,7 +163,7 @@ section{
     width: 100%;
     height: 100%;
     background-color: #f0f0f0;
-    background-image: url('./img/charts.png') ; 
+    /* background-image: url('./img/bg1.jpg');  */
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center;
@@ -170,10 +172,11 @@ section{
 .hero-info{
     margin-top: 3rem;
     z-index: 1;
+
 }
 
 .hero-info h3{
-    color: var(--font-color);
+    color: var(--gradient-color-bg);
     font-weight: 300;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -211,16 +214,19 @@ section{
     left: -3px;
     width: 0;
     height: 70%;
-    border-right: 2px solid var(--main-color);
     animation: moveCursorText 3s linear infinite;
     animation-delay: 2s;
 }
 
 
 .hero-info p{
-    font-size: .9rem;
-    color: var(--font-color);
+    font-size: 2rem;
+    font-weight: 700;    
+    color: rgb(173, 182, 169);
     line-height: 1.5rem;
+    margin-top: 30px;
+    -webkit-text-stroke: 0.1vw rgb(0, 0, 0);
+
 }
 
 .btn-box{
@@ -303,170 +309,133 @@ section{
     animation-delay: 3s;
 }
 
-.img-hero img{
-    position: relative;
-    width: 387px;
-    height: auto;
-    z-index: 10;
-    transform: translate(2%, -8%);
+.img-hero img {
+    .img-hero img {
+        margin-top: -57px;
+        position: relative;
+        width: 150%;
+        /* height: auto; */
+        /* z-index: 1000000 !important; */
+        /* top: 50%; */
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%);*/
+}
 }
 
-.rotate-text{
-    position: absolute;
-    top: 4%;
-    left: -53px;
+
+
+/* ==================== About section CSS code with Form UI ============================ */
+.about {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 2rem;
+    gap: 3rem;
+    padding-top: 100px;
 }
 
-.rotate-text span{
-    position: relative;
-    width: 442px;
-    height: 442px;
-    /* background: red; */
-    border: 6px solid #eaeef0;
-    border-radius: 50%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.rotate-text span::before{
-    content: "";
-    position: absolute;
-    inset: 20px;
-    background: #eaeef0;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.rotate-text span i{
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-color-bg);
-    filter: blur(5px);
-    animation: animate 2s linear infinite;
-}
-
-
-.rotate-text .text{
-    position: absolute;
-    width: 490px;
-    height: 490px;
-    background: #f2f6fb;
-    border-radius: 50%;
-    box-shadow: 0 1px 6px 5.94px rgba(0,0,0,0.2);
-    animation: rotateText 30s linear infinite;
-}
-
-.text b{
-    position: absolute;
-    transform-origin: 0 247px;
-    display: block;
-    top: 0;
-    left: 50%;
-    font-size: 1.2rem;
-}
-
-/* ==================== About section css code ============================ */
-.about{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-.about .about-img{
-    position: relative;
-}
-
-.about .about-img .aboutHero{
-    width: 40vw;
-    height: auto;
-}
-
-.about-img .ring{
-    position: absolute;
-    top: 22%;
-    right: 1%;
-}
-
-.about-img .circle{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-}
-
-
-.about-content{
+.about-content {
+    max-width: 10000px;
     padding: 3rem 0;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    font-size: large;
 }
 
-.about-content h2{
+.about-content h2 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+}
+
+.about-content p {
+    color: black;
+    line-height: 1.6;
+}
+
+.text-box {
+    margin-bottom: 2rem; /* Adjust margin between text boxes */
+}
+
+.text-box p {
+    font-size: 1.2rem;
+    font-weight: bold; /* Make headings bold */
+    margin-bottom: 0.5rem;
+}
+
+.text-box span {
+    display: block;
+    margin-left: 1.5rem; /* Adjust indentation for points */
+    color: var(--gradient-olive-bg); /* Match text color with paragraph */
+}
+
+/* Form UI styles */
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     color: var(--main-color);
 }
 
-.about-content h3{
-    font-size: 2.1rem;
-    line-height: 3rem;
-    margin: .5rem 0;
-}
-
-.about-content p{
-    color: var(--font-color);
-}
-
-.text-box p{
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.about-btn{
-    margin: .8rem 0;
-}
-
-.about-btn button,.cvContent a{
-    background: var(--gradient-white-bg2);
-    padding: 10px 20px;
+.form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--main-color);
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
     border: none;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #000;
-    box-shadow: rgba(60,64,67,0.3)0px 1px 2px 0,
-                  rgba(60,64,67,0.15)0px 2px 6px 2px;
-    margin-right: .5rem;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: all .3s ease;
+    transition: background-color 0.3s ease;
 }
 
-
-.about-btn button.active{
-    background: var(--gradient-olive-bg);
-    color: #ffff;
+.form-button:hover {
+    background-color: #2c7a78; /* Darken the button color on hover */
 }
 
-.text-box{
-    margin: .8rem 0;
-}
-
-.content-btn > .content:not(:first-child){
-    display: none;
-}
-
-.about-btn button:hover{
-    box-shadow: var(--hover-box-shadow);
-}
-
-.cvContent{
-    margin-top: 1.5rem;
-}
 
 /* ==================== Services section css code ============================ */
 .services{
     position: relative;
+    padding-top: 100px;
 }
 
 .main-text{
@@ -645,328 +614,148 @@ section{
 }
 
 
-/* ==================== Services section css code ============================ */
-.fillter-buttons{
-    text-align: center;
-    padding: .5rem;
-    margin-bottom: 2rem;
-}
-
-.fillter-buttons button{
-    background: var(--gradient-white-bg2);
-    padding: 12px 15px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 500;
-    color: #000;
-    box-shadow: rgba(60,64,67,0.3)0px 1px 2px 0,
-    rgba(60,64,67,0.15)0px 2px 6px 2px;
-    margin-right: .5rem;
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-.fillter-buttons button:hover,button.mixitup-control-active{
-    background: var(--gradient-color-bg);
-    color: #fff;
-}
-
-.portfolio-gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(370px , 1fr));
-    gap: 1rem;
-}
-
-.portfolio-img img{
-    display: block;
-    width: 100%;
-    height: 160px;
-    transition: .3s;
-}
-
-.portfolio-box{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: .5rem;
-    padding: .5rem;
-    box-shadow: rgba(0,0,0,0.18)0px 2px 4px;
-    background: var(--gradient-white-bg2);
-    border-radius: 10px;
-    transition: all .3s ease;
-}
-
-.portfolio-content{
-    width: 100%;
-    padding-left: .5rem;
-    padding-bottom: .5rem;
-}
-
-.portfolio-img{
-    width: 100%;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.portfolio-box:hover img{
-    transform: scale(1.1);
-}
-
-.portfolio-content a.readMore{
-    padding: 8px 12px;
-    font-size: .8rem;
-}
-
-.portfolio-content p{
-    font-size: .9rem;
-    color: var(--font-color);
-    margin: .5rem 0 1rem 0;
-}
-
-
-/* ==================== Blog section css code ============================ */
-
-.blog-box{
-    padding: .5rem !important;
-}
-
-.blog{
-    position: relative;
-}
-
-.cards{
-    padding: 1rem .1rem;
-}
-
-.card{
-    background: var(--gradient-white-bg2);
-    box-shadow: rgba(0,0,0,0.18)0px 2px 4px;
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.card-top{
-    overflow: hidden;
-    border-radius: 10px 10px 0 0;
-}
-
-.card img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .3s;
-    display: block;
-}
-
-.card:hover img{
-    transform: scale(1.1);
-}
-
-.card-info{
-    padding-bottom: .5rem;
-}
-
-.card-info h2{
-    font-size: 1.2rem;
-    margin-top: 1rem;
-}
-
-.data{
-    display: block;
-    margin: .2rem 0;
-}
-
-.card .excerpt{
-    color: var(--font-color);
-    margin-bottom: 1.5rem;
-}
-
-.swiper-pagination{
-    position: relative !important;
-    margin-top: 3rem;
-}
-
-.swiper-pagination-bullet{
-    height: 10px !important;
-    width: 30px !important;
-    border-radius: 25px !important;
-    background: var(--gradient-color-bg) !important;
-}
-
-.blog .showcase img{
-    position: absolute;
-    width: 90px;
-    height: 90px;
-}
-
-.blog .showcase .circle{
-    filter: blur(3px);
-}
-
-.blog .showcase .ring{
-    top: 0;
-    left: -1%;
-}
-
-.blog .showcase .half-ring{
-    top: 10%;
-    right: 10%;
-}
-
-.blog .showcase .second-circle{
-    top: 30%;
-    left: 2%;
-    filter: blur(1px);
-}
-
-
 /* ==================== Contact section css code ============================ */
-
-.contactSkills{
+.contactSkills {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
 }
 
-.contact-info,.skills{
+.contact-info, .skills {
     width: 100%;
-    background: rgb(255, 255, 255);
-    box-shadow: rgba(0,0,0,0.18)0px 2px 4px;
-    padding: 1rem;
+    background: #151515;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    color: white;
 }
-
 
 .contact-info input,
-.contact-info form textarea{
+.contact-info form textarea {
     width: 100%;
+    padding: 1.8rem 2rem;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+    resize: none;
+    height: auto;
 }
 
-.contact-info form input,
-.contact-info form textarea{
-    /* width: 100%; */
-    padding: .8rem;
-    border: 2px solid #000000;
-    margin: .5rem 0;
-    background: rgb(255, 255, 255);
-    border-radius: 5px;
+.contact-info input:focus,
+.contact-info textarea:focus {
     outline: none;
-    transition: .3s;
+    border-color: var(--gradient-olive-bg);
+    color: #FFFFFF;
+}
+.contact-info textarea[name="Query"] {
+    height: 10rem; /* Set the height of the textarea */
+    min-height: 10rem; /* Ensure a minimum height */
+    max-height: 10rem; /* Ensure a maximum height */
+    padding: 1.8rem 2rem; /* Adjusted padding */
+    resize: none; /* Prevent resizing */
 }
 
-.contact-info form .input-box{
+.contact-info .form-field {
+    position: relative;
+}
+
+.contact-info .form-field label {
+    font-family: "poppins-bold", sans-serif;
+    font-size: 1.1rem;
+    line-height: 2.4rem;
+    position: absolute;
+    bottom: -1.2rem;
+    right: .6rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    padding: 0 2rem;
+    margin: 0;
+    color: #FFFFFF;
+    background: #FF0077;
+    border-radius: 5px;
+}
+
+.contact-info .form-field label::after {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    margin-top: -6px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid var(--gradient-olive-bg);
+    content: "";
+}
+
+.contact-info .btn {
+    font-size: 1.0rem; /* Reduced font size */
+    display: block;
+    letter-spacing: .2rem;
+    height: 2.6rem; /* Reduced height */
+    line-height: 2.6rem; /* Adjusted line-height */
+    padding: 0 2rem; /* Adjusted padding */
+    margin: 3.2rem auto 0; /* Centered button with adjusted top margin */
+    width: 90%; /* Adjusted width for mobile devices */
+    max-width: 200px; /* Added max-width for better control on larger screens */
+    background: var(--gradient-olive-bg);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Media query for desktop screens */
+@media only screen and (min-width: 768px) {
+    .contact-info .btn {
+        width: 20; /* Adjusted width for desktop */
+        margin: 3.2rem auto 0; /* Centered button with adjusted top margin */
+    }
+}
+
+
+.contact-info .btn:hover,
+.contact-info .btn:focus {
+    background: rgba(237, 179, 60, 1);
+}
+/* Contact Info Section */
+.contact-info {
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
 }
 
-.input-box input{
-    width: 49%;
+.contact-info .col-four {
+    width: calc(33.333% - 20px);
 }
 
-form input:focus,form textarea:focus{
-    filter: brightness(100%);
-    background: #d2e9ff;
-    border: 2px solid #f8caca;
+.contact-info .icon {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-form textarea{
-    resize: none;
+.contact-info h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-form .btn{
-    padding: 15px 20px;
-    cursor: pointer;
-    border: none;
+.contact-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
 }
 
-/* ==================== Skills section css code ============================ */
-
-.skillBox{
-    padding: 0 1rem 1rem;
-}
-
-.skillBox .main-text{
-    margin-bottom: 1rem;
-}
-
-.skill-wrap{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px , auto));
-    justify-content: center;
-    grid-gap: 2.5rem;
-}
-
-.skill{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.outer-circle{
-    width: 170px;
-    height: 170px;
-    position: relative;
-    margin-bottom: 1rem;
-    padding: 20px;
-    border-radius: 50%;
-    box-shadow: rgba(50,50,93,0.25)0px 6px 12px -2px,
-    rgba(0,0,0,0.3)0px 3px 7px -3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.inner-circle{
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    box-shadow: rgba(204,219,232)3px 3px 6px 0px inset,
-    rgba(255,255,255,0.5)-3px -3px 6px 1px inset;
-}
-
-.outer-circle svg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.outer-circle svg circle{
-    fill: none;
-    stroke-width: 15px;
-    stroke: url(#GradientColor);
-    stroke-linecap: round;
-    stroke-dasharray: 465;
-    stroke-dashoffset: 464; 
-}
-
-.outer-circle h2.counter{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;
-    font-size: .9rem;
-    font-weight: 400;
-}
-
-h2.counter span{
-    font-size: 1.7rem;
-}
-
-.sk-title{
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-/*======================= footer ============================ */
-footer{
-    text-align: center;
-    margin: 0 8%;
-    padding: 2rem 0;
-    border-top: 2px solid #e8e1e1;
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-wrap: wrap;
+    }
+    
+    .contact-info .col-four {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
 
 
@@ -1179,7 +968,7 @@ footer{
         font-size: 80%;
     }
     section{
-        padding: 50px 3%;
+        padding: 30px 3%;
     }
     .contact-info form .input-box{
         display: block;
